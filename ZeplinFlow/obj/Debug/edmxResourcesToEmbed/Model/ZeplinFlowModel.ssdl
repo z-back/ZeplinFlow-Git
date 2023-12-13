@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="YMKFLOWModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BudgetAccount">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SUBGROUPID" Type="int" />
+    <Property Name="ACCOUNTCODE" Type="nvarchar" MaxLength="500" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="500" />
+    <Property Name="COMPANY" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BudgetGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TYPE" Type="int" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="BudgetParameter">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RECORDTYPE" Type="bit" />
+    <Property Name="KDV" Type="varchar" MaxLength="50" />
+    <Property Name="ACCOUNTCODE" Type="varchar" MaxLength="50" />
+    <Property Name="NOTACCOUNTCODE" Type="varchar" MaxLength="500" />
+    <Property Name="TYPE" Type="int" />
+    <Property Name="COMPANY" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BudgetSubgroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GROUPID" Type="int" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="500" />
+    <Property Name="COMPANYCODE" Type="nvarchar" MaxLength="500" />
+    <Property Name="ISACTIVE" Type="bit" />
+  </EntityType>
+  <EntityType Name="CostDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COSTGROUPID" Type="int" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="150" />
+    <Property Name="UNITTYPE" Type="nvarchar" MaxLength="50" />
+    <Property Name="ISACTIVE" Type="bit" />
+    <Property Name="AMOUNT" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="CostGroups">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NO" Type="int" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="150" />
+    <Property Name="ISACTIVE" Type="bit" />
+  </EntityType>
+  <EntityType Name="CostToolNose">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PRODUCT_CODE" Type="varchar" MaxLength="35" />
+    <Property Name="TOOLTIP" Type="varchar" MaxLength="500" />
+    <Property Name="QUANTITY" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CAPACITY" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="TOOLNOSE" Type="int" />
+    <Property Name="PRICE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CURRENCY" Type="int" />
+    <Property Name="CREATEDUSER" Type="int" />
+    <Property Name="CREATEDATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ErpConnection">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VT_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="VT_USERNAME" Type="varchar" MaxLength="50" />
+    <Property Name="VT_USERPASS" Type="varchar" MaxLength="50" />
+    <Property Name="ERP_USER" Type="varchar" MaxLength="50" />
+    <Property Name="ERP_PASS" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Files">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RequestID" Type="int" />
+    <Property Name="Creator" Type="nvarchar" MaxLength="50" />
+    <Property Name="Files1" Type="varbinary(max)" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Logs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Module" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="CatchMessage" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="MoldDocument">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DOCUMENT" Type="varbinary(max)" />
+    <Property Name="PROJECT_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="50" />
+    <Property Name="DATE" Type="datetime" />
+    <Property Name="TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="DESCRIPTION" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="MoldProductionTime">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PROJECT_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="STARTDATE" Type="datetime" />
+    <Property Name="ENDDATE" Type="datetime" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="50" />
+    <Property Name="TOTALTIME" Type="float" />
+  </EntityType>
+  <EntityType Name="PaymentOrder">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COMPANYID" Type="int" />
+    <Property Name="COSTUMERCODE" Type="nvarchar" MaxLength="50" />
+    <Property Name="COSTUMERNAME" Type="nvarchar" MaxLength="150" />
+    <Property Name="SALESPERSON" Type="nvarchar" MaxLength="50" />
+    <Property Name="DATE" Type="datetime" />
+    <Property Name="PAYMENTTYPE" Type="nvarchar" MaxLength="50" />
+    <Property Name="CURRENCY" Type="int" />
+    <Property Name="CREATEDATE" Type="datetime" />
+    <Property Name="NOTE" Type="nvarchar" MaxLength="500" />
+    <Property Name="STATUS" Type="nvarchar" MaxLength="50" />
+    <Property Name="USERID" Type="int" />
+    <Property Name="CHANGEDATE" Type="datetime" />
+    <Property Name="ISACTIVE" Type="bit" />
+    <Property Name="PRIORITY" Type="int" />
+    <Property Name="PAYMENTDATE" Type="datetime" />
+    <Property Name="AMOUNT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="FINISHEDAMOUNT" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="PlanlamaLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ISLEM" Type="varchar" MaxLength="50" />
+    <Property Name="ISLEM_NO" Type="varchar" MaxLength="50" />
+    <Property Name="ISLEM_USER" Type="int" />
+    <Property Name="TARIH" Type="datetime" />
+    <Property Name="ESKI" Type="varchar(max)" />
+    <Property Name="YENI" Type="varchar(max)" />
+    <Property Name="FARK" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="ProductCostList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STOK_KODU" Type="nvarchar" MaxLength="50" />
+    <Property Name="PB" Type="int" />
+    <Property Name="PRICE" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="ProjeGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="ProjeParameter">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERID" Type="int" />
+    <Property Name="ISPUBLIC" Type="bit" />
+  </EntityType>
+  <EntityType Name="ProjeRequest">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OEMNO" Type="varchar" MaxLength="50" />
+    <Property Name="ACIKLAMA" Type="varchar" MaxLength="4000" />
+    <Property Name="OLUSTURAN" Type="varchar" MaxLength="50" />
+    <Property Name="TARIH" Type="datetime" />
+    <Property Name="DOSYA" Type="varbinary(max)" />
+    <Property Name="STOK_KODU" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ProjeStatus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STATU" Type="varchar" MaxLength="1000" />
+    <Property Name="ISACTIVE" Type="bit" />
+  </EntityType>
+  <EntityType Name="ReqNotes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReqID" Type="int" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="isRead" Type="bit" />
+  </EntityType>
+  <EntityType Name="Requests">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Module" Type="nvarchar" MaxLength="50" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="100" />
+    <Property Name="Creator" Type="nvarchar" MaxLength="50" />
+    <Property Name="Importance" Type="int" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="Interlocutor" Type="int" />
+    <Property Name="AssociatedPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="Explanation" Type="nvarchar" MaxLength="500" />
+    <Property Name="Platform" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type" Type="nvarchar" MaxLength="30" />
+    <Property Name="RequestType" Type="nvarchar" MaxLength="30" />
+    <Property Name="CompletionDate" Type="datetime" />
+    <Property Name="FileID" Type="int" />
+    <Property Name="Status" Type="nvarchar" MaxLength="100" />
+    <Property Name="FinishDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SalesTarget">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PLASIYER_KODU" Type="varchar" MaxLength="50" />
+    <Property Name="PLASIYER_ACIKLAMA" Type="varchar" MaxLength="500" />
+    <Property Name="CARI_KODU" Type="varchar" MaxLength="500" />
+    <Property Name="YIL" Type="int" />
+    <Property Name="TUTAR" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PB" Type="int" />
+    <Property Name="ULKE_KODU" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tasks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReqID" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="FinishDate" Type="datetime" />
+    <Property Name="Explanation" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="NetUser" Type="nvarchar" MaxLength="50" />
+    <Property Name="NetPass" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="PersonalName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="NetUserId" Type="int" />
+    <Property Name="DefaultPassword" Type="bit" />
+    <Property Name="FiyatGor" Type="int" />
+    <Property Name="PlasiyerCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ErpUsername" Type="varchar" MaxLength="50" />
+    <Property Name="ErpPassword" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="YMKFLOWModelStoreContainer">
+    <EntitySet Name="BudgetAccount" EntityType="Self.BudgetAccount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BudgetGroup" EntityType="Self.BudgetGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BudgetParameter" EntityType="Self.BudgetParameter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BudgetSubgroup" EntityType="Self.BudgetSubgroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CostDetails" EntityType="Self.CostDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CostGroups" EntityType="Self.CostGroups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CostToolNose" EntityType="Self.CostToolNose" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ErpConnection" EntityType="Self.ErpConnection" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Files" EntityType="Self.Files" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MoldDocument" EntityType="Self.MoldDocument" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MoldProductionTime" EntityType="Self.MoldProductionTime" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentOrder" EntityType="Self.PaymentOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlanlamaLog" EntityType="Self.PlanlamaLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductCostList" EntityType="Self.ProductCostList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjeGroup" EntityType="Self.ProjeGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjeParameter" EntityType="Self.ProjeParameter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjeRequest" EntityType="Self.ProjeRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjeStatus" EntityType="Self.ProjeStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReqNotes" EntityType="Self.ReqNotes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Requests" EntityType="Self.Requests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SalesTarget" EntityType="Self.SalesTarget" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tasks" EntityType="Self.Tasks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

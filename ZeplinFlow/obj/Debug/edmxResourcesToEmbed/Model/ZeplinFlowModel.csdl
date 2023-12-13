@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="YMKFLOWModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BudgetAccount">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SUBGROUPID" Type="Int32" />
+    <Property Name="ACCOUNTCODE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="COMPANY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BudgetGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TYPE" Type="Int32" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BudgetParameter">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RECORDTYPE" Type="Boolean" />
+    <Property Name="KDV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNTCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NOTACCOUNTCODE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="TYPE" Type="Int32" />
+    <Property Name="COMPANY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BudgetSubgroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GROUPID" Type="Int32" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="COMPANYCODE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ISACTIVE" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="CostDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COSTGROUPID" Type="Int32" />
+    <Property Name="NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="UNITTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ISACTIVE" Type="Boolean" />
+    <Property Name="AMOUNT" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="CostGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NO" Type="Int32" />
+    <Property Name="NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ISACTIVE" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="CostToolNose">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRODUCT_CODE" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="TOOLTIP" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="QUANTITY" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CAPACITY" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TOOLNOSE" Type="Int32" />
+    <Property Name="PRICE" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CURRENCY" Type="Int32" />
+    <Property Name="CREATEDUSER" Type="Int32" />
+    <Property Name="CREATEDATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ErpConnection">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VT_USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VT_USERPASS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ERP_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ERP_PASS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="File">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RequestID" Type="Int32" />
+    <Property Name="Creator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Files1" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FileName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Module" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="CatchMessage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MoldDocument">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DOCUMENT" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="PROJECT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DATE" Type="DateTime" Precision="3" />
+    <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MoldProductionTime">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PROJECT_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STARTDATE" Type="DateTime" Precision="3" />
+    <Property Name="ENDDATE" Type="DateTime" Precision="3" />
+    <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TOTALTIME" Type="Double" />
+  </EntityType>
+  <EntityType Name="PaymentOrder">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COMPANYID" Type="Int32" />
+    <Property Name="COSTUMERCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="COSTUMERNAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="SALESPERSON" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DATE" Type="DateTime" Precision="3" />
+    <Property Name="PAYMENTTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CURRENCY" Type="Int32" />
+    <Property Name="CREATEDATE" Type="DateTime" Precision="3" />
+    <Property Name="NOTE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USERID" Type="Int32" />
+    <Property Name="CHANGEDATE" Type="DateTime" Precision="3" />
+    <Property Name="ISACTIVE" Type="Boolean" />
+    <Property Name="PRIORITY" Type="Int32" />
+    <Property Name="PAYMENTDATE" Type="DateTime" Precision="3" />
+    <Property Name="AMOUNT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="FINISHEDAMOUNT" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="PlanlamaLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ISLEM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISLEM_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ISLEM_USER" Type="Int32" />
+    <Property Name="TARIH" Type="DateTime" Precision="3" />
+    <Property Name="ESKI" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="YENI" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ProductCostList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STOK_KODU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PB" Type="Int32" />
+    <Property Name="PRICE" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="ProjeGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ProjeParameter">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERID" Type="Int32" />
+    <Property Name="ISPUBLIC" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ProjeRequest">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OEMNO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACIKLAMA" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="OLUSTURAN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TARIH" Type="DateTime" Precision="3" />
+    <Property Name="DOSYA" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="STOK_KODU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ProjeStatu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STATU" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ISACTIVE" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ReqNote">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReqID" Type="Int32" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="isRead" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Request">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Module" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Subject" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Creator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Importance" Type="Int32" />
+    <Property Name="CreationDate" Type="DateTime" Precision="3" />
+    <Property Name="Interlocutor" Type="Int32" />
+    <Property Name="AssociatedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Explanation" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Platform" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="RequestType" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CompletionDate" Type="DateTime" Precision="3" />
+    <Property Name="FileID" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FinishDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SalesTarget">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PLASIYER_KODU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PLASIYER_ACIKLAMA" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CARI_KODU" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="YIL" Type="Int32" />
+    <Property Name="TUTAR" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PB" Type="Int32" />
+    <Property Name="ULKE_KODU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReqID" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="FinishDate" Type="DateTime" Precision="3" />
+    <Property Name="Explanation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NetUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NetPass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="PersonalName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NetUserId" Type="Int32" />
+    <Property Name="DefaultPassword" Type="Boolean" />
+    <Property Name="FiyatGor" Type="Int32" />
+    <Property Name="PlasiyerCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ErpUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ErpPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="YMKFLOWEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BudgetAccounts" EntityType="Self.BudgetAccount" />
+    <EntitySet Name="BudgetGroups" EntityType="Self.BudgetGroup" />
+    <EntitySet Name="BudgetParameters" EntityType="Self.BudgetParameter" />
+    <EntitySet Name="BudgetSubgroups" EntityType="Self.BudgetSubgroup" />
+    <EntitySet Name="Companies" EntityType="Self.Company" />
+    <EntitySet Name="CostDetails" EntityType="Self.CostDetail" />
+    <EntitySet Name="CostGroups" EntityType="Self.CostGroup" />
+    <EntitySet Name="CostToolNoses" EntityType="Self.CostToolNose" />
+    <EntitySet Name="ErpConnections" EntityType="Self.ErpConnection" />
+    <EntitySet Name="Files" EntityType="Self.File" />
+    <EntitySet Name="Logs" EntityType="Self.Log" />
+    <EntitySet Name="MoldDocuments" EntityType="Self.MoldDocument" />
+    <EntitySet Name="MoldProductionTimes" EntityType="Self.MoldProductionTime" />
+    <EntitySet Name="PaymentOrders" EntityType="Self.PaymentOrder" />
+    <EntitySet Name="PlanlamaLogs" EntityType="Self.PlanlamaLog" />
+    <EntitySet Name="ProductCostLists" EntityType="Self.ProductCostList" />
+    <EntitySet Name="ProjeGroups" EntityType="Self.ProjeGroup" />
+    <EntitySet Name="ProjeParameters" EntityType="Self.ProjeParameter" />
+    <EntitySet Name="ProjeRequests" EntityType="Self.ProjeRequest" />
+    <EntitySet Name="ProjeStatus" EntityType="Self.ProjeStatu" />
+    <EntitySet Name="ReqNotes" EntityType="Self.ReqNote" />
+    <EntitySet Name="Requests" EntityType="Self.Request" />
+    <EntitySet Name="SalesTargets" EntityType="Self.SalesTarget" />
+    <EntitySet Name="Tasks" EntityType="Self.Task" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34301.259
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeplinFlow", "ZeplinFlow\ZeplinFlow.csproj", "{0765A2C7-A609-43E0-AB1E-E104C39961E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0765A2C7-A609-43E0-AB1E-E104C39961E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0765A2C7-A609-43E0-AB1E-E104C39961E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0765A2C7-A609-43E0-AB1E-E104C39961E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0765A2C7-A609-43E0-AB1E-E104C39961E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {078A2879-38A3-4F3B-B0C1-82F2BDBE8656}
+	EndGlobalSection
+EndGlobal

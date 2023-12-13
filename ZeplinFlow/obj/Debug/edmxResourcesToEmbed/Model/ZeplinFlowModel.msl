@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="YMKFLOWModelStoreContainer" CdmEntityContainer="YMKFLOWEntities">
+    <EntitySetMapping Name="BudgetAccounts">
+      <EntityTypeMapping TypeName="YMKFLOWModel.BudgetAccount">
+        <MappingFragment StoreEntitySet="BudgetAccount">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SUBGROUPID" ColumnName="SUBGROUPID" />
+          <ScalarProperty Name="ACCOUNTCODE" ColumnName="ACCOUNTCODE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="COMPANY" ColumnName="COMPANY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BudgetGroups">
+      <EntityTypeMapping TypeName="YMKFLOWModel.BudgetGroup">
+        <MappingFragment StoreEntitySet="BudgetGroup">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BudgetParameters">
+      <EntityTypeMapping TypeName="YMKFLOWModel.BudgetParameter">
+        <MappingFragment StoreEntitySet="BudgetParameter">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RECORDTYPE" ColumnName="RECORDTYPE" />
+          <ScalarProperty Name="KDV" ColumnName="KDV" />
+          <ScalarProperty Name="ACCOUNTCODE" ColumnName="ACCOUNTCODE" />
+          <ScalarProperty Name="NOTACCOUNTCODE" ColumnName="NOTACCOUNTCODE" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="COMPANY" ColumnName="COMPANY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BudgetSubgroups">
+      <EntityTypeMapping TypeName="YMKFLOWModel.BudgetSubgroup">
+        <MappingFragment StoreEntitySet="BudgetSubgroup">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GROUPID" ColumnName="GROUPID" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="YMKFLOWModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="COMPANYCODE" ColumnName="COMPANYCODE" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CostDetails">
+      <EntityTypeMapping TypeName="YMKFLOWModel.CostDetail">
+        <MappingFragment StoreEntitySet="CostDetails">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="COSTGROUPID" ColumnName="COSTGROUPID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="UNITTYPE" ColumnName="UNITTYPE" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CostGroups">
+      <EntityTypeMapping TypeName="YMKFLOWModel.CostGroup">
+        <MappingFragment StoreEntitySet="CostGroups">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NO" ColumnName="NO" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CostToolNoses">
+      <EntityTypeMapping TypeName="YMKFLOWModel.CostToolNose">
+        <MappingFragment StoreEntitySet="CostToolNose">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PRODUCT_CODE" ColumnName="PRODUCT_CODE" />
+          <ScalarProperty Name="TOOLTIP" ColumnName="TOOLTIP" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="CAPACITY" ColumnName="CAPACITY" />
+          <ScalarProperty Name="TOOLNOSE" ColumnName="TOOLNOSE" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+          <ScalarProperty Name="CREATEDUSER" ColumnName="CREATEDUSER" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErpConnections">
+      <EntityTypeMapping TypeName="YMKFLOWModel.ErpConnection">
+        <MappingFragment StoreEntitySet="ErpConnection">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VT_NAME" ColumnName="VT_NAME" />
+          <ScalarProperty Name="VT_USERNAME" ColumnName="VT_USERNAME" />
+          <ScalarProperty Name="VT_USERPASS" ColumnName="VT_USERPASS" />
+          <ScalarProperty Name="ERP_USER" ColumnName="ERP_USER" />
+          <ScalarProperty Name="ERP_PASS" ColumnName="ERP_PASS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Files">
+      <EntityTypeMapping TypeName="YMKFLOWModel.File">
+        <MappingFragment StoreEntitySet="Files">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RequestID" ColumnName="RequestID" />
+          <ScalarProperty Name="Creator" ColumnName="Creator" />
+          <ScalarProperty Name="Files1" ColumnName="Files1" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logs">
+      <EntityTypeMapping TypeName="YMKFLOWModel.Log">
+        <MappingFragment StoreEntitySet="Logs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Module" ColumnName="Module" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CatchMessage" ColumnName="CatchMessage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MoldDocuments">
+      <EntityTypeMapping TypeName="YMKFLOWModel.MoldDocument">
+        <MappingFragment StoreEntitySet="MoldDocument">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DOCUMENT" ColumnName="DOCUMENT" />
+          <ScalarProperty Name="PROJECT_CODE" ColumnName="PROJECT_CODE" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MoldProductionTimes">
+      <EntityTypeMapping TypeName="YMKFLOWModel.MoldProductionTime">
+        <MappingFragment StoreEntitySet="MoldProductionTime">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PROJECT_CODE" ColumnName="PROJECT_CODE" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="TOTALTIME" ColumnName="TOTALTIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentOrders">
+      <EntityTypeMapping TypeName="YMKFLOWModel.PaymentOrder">
+        <MappingFragment StoreEntitySet="PaymentOrder">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="COMPANYID" ColumnName="COMPANYID" />
+          <ScalarProperty Name="COSTUMERCODE" ColumnName="COSTUMERCODE" />
+          <ScalarProperty Name="COSTUMERNAME" ColumnName="COSTUMERNAME" />
+          <ScalarProperty Name="SALESPERSON" ColumnName="SALESPERSON" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="PAYMENTTYPE" ColumnName="PAYMENTTYPE" />
+          <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="CHANGEDATE" ColumnName="CHANGEDATE" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+          <ScalarProperty Name="PAYMENTDATE" ColumnName="PAYMENTDATE" />
+          <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+          <ScalarProperty Name="FINISHEDAMOUNT" ColumnName="FINISHEDAMOUNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlanlamaLogs">
+      <EntityTypeMapping TypeName="YMKFLOWModel.PlanlamaLog">
+        <MappingFragment StoreEntitySet="PlanlamaLog">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ISLEM" ColumnName="ISLEM" />
+          <ScalarProperty Name="ISLEM_NO" ColumnName="ISLEM_NO" />
+          <ScalarProperty Name="ISLEM_USER" ColumnName="ISLEM_USER" />
+          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+          <ScalarProperty Name="ESKI" ColumnName="ESKI" />
+          <ScalarProperty Name="YENI" ColumnName="YENI" />
+          <ScalarProperty Name="FARK" ColumnName="FARK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductCostLists">
+      <EntityTypeMapping TypeName="YMKFLOWModel.ProductCostList">
+        <MappingFragment StoreEntitySet="ProductCostList">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="STOK_KODU" ColumnName="STOK_KODU" />
+          <ScalarProperty Name="PB" ColumnName="PB" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjeGroups">
+      <EntityTypeMapping TypeName="YMKFLOWModel.ProjeGroup">
+        <MappingFragment StoreEntitySet="ProjeGroup">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjeParameters">
+      <EntityTypeMapping TypeName="YMKFLOWModel.ProjeParameter">
+        <MappingFragment StoreEntitySet="ProjeParameter">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="ISPUBLIC" ColumnName="ISPUBLIC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjeRequests">
+      <EntityTypeMapping TypeName="YMKFLOWModel.ProjeRequest">
+        <MappingFragment StoreEntitySet="ProjeRequest">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OEMNO" ColumnName="OEMNO" />
+          <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+          <ScalarProperty Name="OLUSTURAN" ColumnName="OLUSTURAN" />
+          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+          <ScalarProperty Name="DOSYA" ColumnName="DOSYA" />
+          <ScalarProperty Name="STOK_KODU" ColumnName="STOK_KODU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjeStatus">
+      <EntityTypeMapping TypeName="YMKFLOWModel.ProjeStatu">
+        <MappingFragment StoreEntitySet="ProjeStatus">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="STATU" ColumnName="STATU" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReqNotes">
+      <EntityTypeMapping TypeName="YMKFLOWModel.ReqNote">
+        <MappingFragment StoreEntitySet="ReqNotes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ReqID" ColumnName="ReqID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="isRead" ColumnName="isRead" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requests">
+      <EntityTypeMapping TypeName="YMKFLOWModel.Request">
+        <MappingFragment StoreEntitySet="Requests">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Module" ColumnName="Module" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Creator" ColumnName="Creator" />
+          <ScalarProperty Name="Importance" ColumnName="Importance" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="Interlocutor" ColumnName="Interlocutor" />
+          <ScalarProperty Name="AssociatedPerson" ColumnName="AssociatedPerson" />
+          <ScalarProperty Name="Explanation" ColumnName="Explanation" />
+          <ScalarProperty Name="Platform" ColumnName="Platform" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="RequestType" ColumnName="RequestType" />
+          <ScalarProperty Name="CompletionDate" ColumnName="CompletionDate" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesTargets">
+      <EntityTypeMapping TypeName="YMKFLOWModel.SalesTarget">
+        <MappingFragment StoreEntitySet="SalesTarget">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PLASIYER_KODU" ColumnName="PLASIYER_KODU" />
+          <ScalarProperty Name="PLASIYER_ACIKLAMA" ColumnName="PLASIYER_ACIKLAMA" />
+          <ScalarProperty Name="CARI_KODU" ColumnName="CARI_KODU" />
+          <ScalarProperty Name="YIL" ColumnName="YIL" />
+          <ScalarProperty Name="TUTAR" ColumnName="TUTAR" />
+          <ScalarProperty Name="PB" ColumnName="PB" />
+          <ScalarProperty Name="ULKE_KODU" ColumnName="ULKE_KODU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tasks">
+      <EntityTypeMapping TypeName="YMKFLOWModel.Task">
+        <MappingFragment StoreEntitySet="Tasks">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ReqID" ColumnName="ReqID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+          <ScalarProperty Name="Explanation" ColumnName="Explanation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="YMKFLOWModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="NetUser" ColumnName="NetUser" />
+          <ScalarProperty Name="NetPass" ColumnName="NetPass" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PersonalName" ColumnName="PersonalName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NetUserId" ColumnName="NetUserId" />
+          <ScalarProperty Name="DefaultPassword" ColumnName="DefaultPassword" />
+          <ScalarProperty Name="FiyatGor" ColumnName="FiyatGor" />
+          <ScalarProperty Name="PlasiyerCode" ColumnName="PlasiyerCode" />
+          <ScalarProperty Name="ErpUsername" ColumnName="ErpUsername" />
+          <ScalarProperty Name="ErpPassword" ColumnName="ErpPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
